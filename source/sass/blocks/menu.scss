@@ -1,0 +1,60 @@
+.menu ul {
+  // background-color задан временно
+  background-color: #000000;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 33px;
+  margin: 0;
+  padding: 0;
+
+  @include vp-1365 {
+    gap: 23px;
+  }
+
+  @include vp-767 {
+    flex-direction: column;
+  }
+}
+
+.menu--main ul {
+  @include vp-767 {
+    gap: 10px;
+
+    // background-color задан временно
+    background-color: #ffffff;
+  }
+}
+
+.menu li {
+  list-style-type: none;
+}
+
+.menu a {
+  display: block;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: $alice-blue;
+}
+
+.menu--main a {
+  @include vp-1365 {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  @include vp-767 {
+    padding: 10px 10px 8px;
+    font-size: 18px;
+    line-height: 22px;
+    color: $color-tangaroa;
+  }
+}
+
+.menu--additional a {
+  @include vp-1365 {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}

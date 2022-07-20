@@ -1,0 +1,84 @@
+.catalog ul {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+
+  @include vp-1365 {
+    grid-template-columns: repeat(auto-fit, minmax(309px, 1fr));
+    gap: 30px;
+  }
+
+  @include vp-767 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.catalog li {
+  min-height: 386px;
+  padding: 30px;
+  padding-top: 35px;
+  background-color: $color-tangaroa;
+
+  @include vp-1365 {
+    padding: 35px;
+  }
+
+  @include vp-767 {
+    padding: 25px;
+    padding-top: 35px;
+  }
+}
+
+.catalog li:hover {
+  padding-right: 25px;
+  padding-left: 25px;
+
+  @include vp-1365 {
+    padding-right: 35px;
+    padding-left: 35px;
+  }
+
+  @include vp-767 {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+}
+
+.catalog__item-content {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+li:hover .catalog__item-content {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.catalog h3 {
+  color: $alice-blue;
+}
+
+.catalog dl {
+  margin: 0;
+}
+
+.catalog dt {
+  color: $alice-blue;
+}
+
+.catalog dd {
+  margin: 0;
+  color: $quartz;
+}
+
+.catalog a {
+  display: block;
+  padding: 14px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  color: $color-tangaroa;
+  text-align: center;
+  background-color: $alice-blue;
+}

@@ -1,0 +1,26 @@
+.features ul {
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 40px;
+
+  @include vp-1365 {
+    grid-template-columns: repeat(auto-fit, minmax(206px, 1fr));
+    gap: 30px;
+  }
+
+  @include vp-767 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.features li {
+  padding: 30px 30px 50px;
+  background-color: $alice-blue;
+
+  @include vp-1365 {
+    padding: 25px 16px 25px 20px;
+  }
+}
+
+.features h3 {
+  margin-bottom: 20px;
+}
