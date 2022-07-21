@@ -8,11 +8,44 @@
     <title>Круизы в Антарктику</title>
     <link rel="stylesheet" href="css/style.min.css">
   </head>
-  <body>
+  <body class="page">
     <div class="wrapper">
-      <header>
-        <div class="container"></div>
-      </header>
+      <div class="page__header-and-intro-wrapper">
+        <header class="header">
+          <div class="header__container container">
+            <a class="header__logo">
+              <img
+                src="img/sprite/logo.svg"
+                alt="Логотип туристического сервиса Круизы в Антарктику"
+                width="70"
+                height="38"
+              >
+            </a>
+            <nav class="header__menu menu menu--main">
+              <button class="menu__button" type="button" aria-expanded="false" aria-controls="menu__list" aria-label="Открыть меню"></button>
+              <ul id="menu__list">
+                <li>
+                  <a href="#">Преимущества</a>
+                </li>
+                <li>
+                  <a href="#">Направления</a>
+                </li>
+                <li>
+                  <a href="#">Ближайшие круизы</a>
+                </li>
+                <li>
+                  <a href="#">Контакты</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </header>
+        <section class="intro">
+          <div class="container">
+
+          </div>
+        </section>
+      </div>
       <main>
         <section class="intro">
           <div class="container">
@@ -22,24 +55,9 @@
           </div>
         </section>
 
-        <!-- повторяющиеся элементы -->
-        menu in header
-        <nav class="menu menu--main">
-          <ul>
-            <li>
-              <a href="#">Преимущества</a>
-            </li>
-            <li>
-              <a href="#">Направления</a>
-            </li>
-            <li>
-              <a href="#">Ближайшие круизы</a>
-            </li>
-            <li>
-              <a href="#">Контакты</a>
-            </li>
-          </ul>
-        </nav>
+        <!-- повторяющиеся элементы
+
+
 
         menu in footer
         <div class="menu menu--additional">
@@ -277,6 +295,7 @@
             </li>
           </ul>
         </section>
+        -->
 
       </main>
       <footer>

@@ -8,7 +8,7 @@
   margin: 0;
   padding: 0;
 
-  @include vp-1365 {
+  @include vp-1023 {
     gap: 23px;
   }
 
@@ -39,7 +39,7 @@
 }
 
 .menu--main a {
-  @include vp-1365 {
+  @include vp-1023 {
     font-size: 14px;
     line-height: 17px;
   }
@@ -53,7 +53,7 @@
 }
 
 .menu--additional a {
-  @include vp-1365 {
+  @include vp-1023 {
     font-size: 12px;
     line-height: 15px;
   }
