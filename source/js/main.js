@@ -5,6 +5,24 @@ import {initModals} from './modules/modals/init-modals';
 
 window.addEventListener('DOMContentLoaded', () => {
 
+  // menu
+
+  const elMainNav = document.querySelector('.header--menu');
+  const elMainNavToggle = document.querySelector('.menu__button');
+
+  elMainNav.classList.remove('has-no-js');
+  elMainNav.classList.add('is-closed');
+
+  elMainNavToggle.addEventListener('click', () => {
+    if (elMainNav.classList.contains('is-closed')) {
+      elMainNav.classList.remove('is-closed');
+      elMainNav.classList.add('is-opened');
+    } else {
+      elMainNav.classList.add('is-closed');
+      elMainNav.classList.remove('is-opened');
+    }
+  });
+
   // Utils
   // ---------------------------------
 

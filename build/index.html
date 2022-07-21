@@ -5,49 +5,90 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="">
+
+    <link rel="preload" href="fonts/montserrat-400.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+
     <title>Круизы в Антарктику</title>
     <link rel="stylesheet" href="css/style.min.css">
   </head>
-  <body class="page">
+  <body>
     <div class="wrapper">
-      <div class="page__header-and-intro-wrapper">
-        <header class="header">
-          <div class="header__container container">
-            <a class="header__logo">
-              <img
-                src="img/sprite/logo.svg"
-                alt="Логотип туристического сервиса Круизы в Антарктику"
-                width="70"
-                height="38"
-              >
-            </a>
-            <nav class="header__menu menu menu--main">
-              <button class="menu__button" type="button" aria-expanded="false" aria-controls="menu__list" aria-label="Открыть меню"></button>
-              <ul id="menu__list">
-                <li>
-                  <a href="#">Преимущества</a>
-                </li>
-                <li>
-                  <a href="#">Направления</a>
-                </li>
-                <li>
-                  <a href="#">Ближайшие круизы</a>
-                </li>
-                <li>
-                  <a href="#">Контакты</a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </header>
-        <section class="intro">
-          <div class="container">
-
-          </div>
-        </section>
+      <div class="page-head">
+        <div class="page-head__inner">
+          <header class="header header--menu has-no-js">
+            <div class="container">
+              <nav class="header__menu menu menu--main">
+                <a class="menu__logo logo">
+                  <svg
+                  width="70"
+                  height="38"
+                  viewBox="0 0 70 38" aria-hidden="true"
+                  focusable="false">
+                    <use href="img/sprite_auto.svg#logo"></use>
+                  </svg>
+                </a>
+                <button class="menu__button btn" type="button" aria-expanded="false" aria-controls="menu__list" aria-label="Открыть меню"></button>
+                <ul id="menu__list">
+                  <li>
+                    <a href="#">Преимущества</a>
+                  </li>
+                  <li>
+                    <a href="#">Направления</a>
+                  </li>
+                  <li>
+                    <a href="#">Ближайшие круизы</a>
+                  </li>
+                  <li>
+                    <a href="#">Контакты</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </header>
+          <section class="intro">
+            <div class="intro__container container">
+              <h1>Круизы в&nbsp;Антарктику</h1>
+              <p>Волшебный мир айсбергов и&nbsp;пингвинов</p>
+            </div>
+          </section>
+        </div>
+        <div class="page-head__decors" aria-hidden="true">
+          <picture>
+            <source
+              media="(max-width: 767px)"
+              srcset="img/intro-size-s@1x.webp 1x, img/intro-size-s@2x.webp 2x"
+              type="image/webp">
+            <source
+              media="(max-width: 1023px)"
+              srcset="img/intro-size-m@1x.webp 1x, img/intro-size-m@2x.webp 2x"
+              type="image/webp">
+            <source
+              srcset="img/intro-size-l@1x.webp 1x, img/intro-size-l@2x.webp 2x"
+              type="image/webp">
+            <!--
+              Десктоп:
+              1х: 1366px; 2x: 2732px
+              Планшет:
+              1х: 768px; 2x: 1536px
+              Смартфон:
+              1х: 320px; 2x: 640px
+            -->
+            <img
+              srcset="img/intro-size-s@1x.jpg 320w,
+                img/intro-size-m@1x.jpg 768w,
+                img/intro-size-l@1x.jpg 1366w"
+              sizes="(max-width: 767px) 320px,
+                (max-width: 1023px) 768px,
+                1366px"
+              src="img/intro-size-l@1x.jpg"
+              width="1366"
+              height="650"
+              alt="Пейзаж Антарктики">
+          </picture>
+        </div>
       </div>
       <main>
-        <section class="intro">
+        <section class="">
           <div class="container">
             <!-- Кнопки для модальных окон
             <p><a class="btn" href="#" data-open-modal="feedback">modal--feedback link</a></p>
