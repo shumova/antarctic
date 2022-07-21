@@ -1,0 +1,47 @@
+.main__section h2 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 42px;
+  color: $color-tangaroa;
+
+  @include vp-1023 {
+    font-size: 26px;
+    line-height: 39px;
+  }
+
+  @include vp-767 {
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
+
+.main__section ul {
+  display: grid;
+  margin: 0;
+  padding: 0;
+}
+
+.main__section li {
+  list-style-type: none;
+}
+
+.main__section h3 {
+  margin: 0;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  text-align: left;
+
+  @include vp-1023 {
+    line-height: 25px;
+  }
+}
+
+.main__section p {
+  margin: 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: left;
+}

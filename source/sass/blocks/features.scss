@@ -1,0 +1,30 @@
+.features ul {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3%;
+
+  @include vp-1023 {
+    gap: 4%;
+  }
+
+  @include vp-767 {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+.features li {
+  padding: 30px 2% 50px;
+  background-color: $alice-blue;
+
+  @include vp-1023 {
+    padding: 25px 2% 25px 2.5%;
+  }
+
+  @include vp-767 {
+    padding: 25px 6% 25px 4.5%;
+  }
+}
+
+.features h3 {
+  margin-bottom: 20px;
+}
