@@ -7,7 +7,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // menu
 
-  const elMainNav = document.querySelector('.header--menu');
+  const elMainNav = document.querySelector('[data-menu]');
   const elMainNavToggle = document.querySelector('.menu__button');
 
   elMainNav.classList.remove('has-no-js');
