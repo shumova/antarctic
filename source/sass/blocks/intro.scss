@@ -1,0 +1,68 @@
+.intro {
+  padding-top: 185px;
+  padding-bottom: 279px;
+  color: $alice-blue;
+
+  @include vp-1023 {
+    padding-top: 205px;
+    padding-bottom: 273px;
+  }
+
+  @include vp-767 {
+    padding-top: 96px;
+    padding-bottom: 180px;
+  }
+}
+
+.intro__container {
+  padding-right: 160px;
+  padding-left: 198px;
+
+  @include vp-1023 {
+    padding-right: 6%;
+    padding-left: 6%;
+  }
+
+  @include vp-767 {
+    padding-right: 4.5%;
+    padding-left: 4.5%;
+  }
+}
+
+.intro h1 {
+  margin: 0;
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 54px;
+  line-height: 66px;
+
+  @include vp-1023 {
+    margin-bottom: 15px;
+    font-size: 50px;
+    line-height: 61px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 10px;
+    font-size: 36px;
+    line-height: 45px;
+  }
+}
+
+.intro p {
+  margin: 0;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+
+  @include vp-1023 {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  @include vp-767 {
+    max-width: 75%;
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
