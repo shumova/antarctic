@@ -21,6 +21,25 @@ window.addEventListener('DOMContentLoaded', () => {
       elMainNav.classList.add('is-closed');
       elMainNav.classList.remove('is-opened');
     }
+
+    if (elMainNavToggle.getAttribute('aria-expanded') === 'false') {
+      elMainNavToggle.setAttribute('aria-expanded', 'true');
+    } else {
+      elMainNavToggle.setAttribute('aria-expanded', 'false');
+    }
+
+    if (elMainNavToggle.getAttribute('aria-label') === 'Открыть меню') {
+      elMainNavToggle.setAttribute('aria-label', 'Закрыть меню');
+    } else {
+      elMainNavToggle.setAttribute('aria-label', 'Открыть меню');
+    }
+  });
+
+  document.addEventListener('click', (event) => {
+    if (elMainNav.classList.contains('is-opened') && !elMainNav.contains(event.target)) {
+      elMainNav.classList.add('is-closed');
+      elMainNav.classList.remove('is-opened');
+    }
   });
 
   // Utils

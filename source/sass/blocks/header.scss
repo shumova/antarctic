@@ -1,16 +1,10 @@
-.header .container {
+.header__container {
   @include vp-767 {
     padding: 0;
   }
 }
 
-.header--menu {
-  @include vp-767 {
-    min-height: 80px;
-  }
-}
-
-// menu--closed
+// is-closed
 
 .header--menu.is-closed ul {
   @include vp-767 {
@@ -25,7 +19,7 @@
     &::after {
       position: absolute;
       content: "";
-      top: 44%;
+      top: 47%;
       left: 50%;
       width: 24px;
       height: 2px;
@@ -36,16 +30,24 @@
   }
 }
 
-// menu--open
+// is-opened
+
+.header--menu.is-opened + .intro {
+  @include vp-767 {
+    margin-top: 80px;
+    color: transparent;
+  }
+}
 
 .header--menu.is-opened .menu {
   @include vp-767 {
-    position: absolute;
+    position: fixed;
+    z-index: 5;
     top: 0;
     right: 0;
     width: 89%;
-    height: 100%;
-    row-gap: 20px;
+    height: 100vh;
+    row-gap: 22px;
     background-color: $alice-blue;
   }
 }
@@ -72,7 +74,7 @@
     &::before {
       position: absolute;
       content: "";
-      top: 45%;
+      top: 48%;
       left: 50%;
       width: 20px;
       height: 2px;
@@ -87,10 +89,6 @@
       transform: translateX(-50%) rotate(-45deg);
     }
   }
-}
-
-.header--menu.is-opened + .intro {
-  color: transparent;
 }
 
 // menu--no-js

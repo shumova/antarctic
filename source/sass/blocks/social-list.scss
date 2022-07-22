@@ -1,0 +1,37 @@
+.social-list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+  align-content: center;
+  gap: 21px;
+
+  @include vp-1023 {
+    gap: 18px;
+  }
+}
+
+.social-list li {
+  list-style-type: none;
+}
+
+.social-list a {
+  position: relative;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.social-list svg {
+  @include vp-1023 {
+    height: 16px;
+    width: auto;
+  }
+}

@@ -1,0 +1,78 @@
+.travel {
+  padding-top: 120px;
+  padding-bottom: 120px;
+  background-color: $alice-blue;
+
+  @include vp-1023 {
+    padding-top: 90px;
+    padding-bottom: 93px;
+  }
+
+  @include vp-767 {
+    padding-top: 56px;
+    padding-bottom: 65px;
+  }
+}
+
+.travel__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 39px;
+  align-items: center;
+
+  @include vp-1023 {
+    gap: 30px;
+  }
+
+  @include vp-767 {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding-right: 4.6%;
+    padding-left: 4.6%;
+  }
+}
+
+.travel__content {
+  text-align: start;
+  padding-right: 25px;
+
+  @include vp-1023 {
+    padding-right: 0;
+  }
+}
+
+.travel__content h2 {
+  margin-bottom: 25px;
+  line-height: 37px;
+
+  @include vp-1023 {
+    margin-bottom: 15px;
+  }
+
+  @include vp-767 {
+    line-height: 35px;
+  }
+}
+
+.travel__content p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: $color-tangaroa;
+}
+
+.travel__content br {
+  display: none;
+
+  @include vp-1023 {
+    display: block;
+  }
+}
+
+.travel img {
+  width: 100%;
+
+  @include vp-767 {
+    margin-inline: auto;
+  }
+}
