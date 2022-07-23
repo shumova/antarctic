@@ -1,18 +1,20 @@
 .page-head {
   position: relative;
+  z-index: 5;
   min-height: 500px;
+  flex-shrink: 0;
   background-color: #39659d;
 }
 
 .page-head__inner {
   position: relative;
-  z-index: 2;
+  z-index: 1;
 }
 
 .page-head__decors {
   position: absolute;
   top: 0;
-  z-index: 1;
+  z-index: 0;
   width: 100%;
   height: 100%;
 }

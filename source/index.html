@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="">
 
-    <link rel="preload" href="fonts/montserrat-400.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/montserrat-700.woff2" type="font/woff2" as="font" crossorigin="anonymous">
 
     <title>Круизы в Антарктику</title>
     <link rel="stylesheet" href="css/style.min.css">
@@ -16,19 +16,20 @@
       <div class="page-head">
         <div class="page-head__inner">
           <header class="header header--menu has-no-js" data-menu>
-            <div class="container">
+            <div class="header__container container">
               <nav class="header__menu menu menu--main">
-                <a class="menu__logo logo">
+                <a class="menu__logo menu__logo--main logo">
                   <svg
                   width="70"
                   height="38"
-                  viewBox="0 0 70 38" aria-hidden="true"
-                  focusable="false">
+                  viewBox="0 0 70 38"
+                  role="img"
+                  aria-label="На главную круизов в Антарктику">
                     <use href="img/sprite_auto.svg#logo"></use>
                   </svg>
                 </a>
-                <button class="menu__button btn" type="button" aria-expanded="false" aria-controls="menu__list" aria-label="Открыть меню"></button>
-                <ul id="menu__list">
+                <button class="menu__button btn" type="button" aria-expanded="false" aria-controls="menu-list" aria-label="Открыть меню"></button>
+                <ul class="menu__list menu__list--main" id="menu-list">
                   <li>
                     <a href="#">Преимущества</a>
                   </li>
@@ -87,58 +88,123 @@
           </picture>
         </div>
       </div>
-      <main>
-        <section class="">
-          <div class="container">
-            <!-- Кнопки для модальных окон
-            <p><a class="btn" href="#" data-open-modal="feedback">modal--feedback link</a></p>
-            <p><a class="btn" href="#" data-open-modal="success">modal--success link</a></p> -->
+      <main class="main">
+        <section class="main__section travel">
+          <div class="travel__container container">
+            <div class="travel__content">
+              <h2>Путешествие <br>на&nbsp;край Земли</h2>
+              <p>Это волшебное путешествие поможет вам познакомиться поближе с&nbsp;удивительным миром Антарктики. Наш круизный лайнер отвезет вас на&nbsp;край Земли, где вы&nbsp;сможете увидеть: ледяные айсберги, несколько видов пингвинов, китов, морских котиков и&nbsp;многое другое.</p>
+            </div>
+            <picture>
+              <source
+                media="(max-width: 400px)"
+                srcset="img/penguins-size-s@1x.webp 1x, img/penguins-size-s@2x.webp 2x"
+                type="image/webp">
+                <source
+                media="(max-width: 767px)"
+                srcset="img/penguins-size-l@1x.webp 1x, img/penguins-size-l@2x.webp 2x"
+                type="image/webp">
+              <source
+                media="(max-width: 1023px)"
+                srcset="img/penguins-size-m@1x.webp 1x, img/penguins-size-m@2x.webp 2x"
+                type="image/webp">
+              <source
+                srcset="img/penguins@1x.webp 1x, img/penguins@2x.webp 2x"
+                type="image/webp">
+              <!--
+                Десктоп:
+                1х: 560px; 2x: 1120px
+                Планшет:
+                1х: 324px; 2x: 648px
+                Смартфон:
+                1х: 290px; 2x: 580px
+              -->
+              <img
+                srcset="img/penguins-size-s@1x.jpg 290w,
+                  img/penguins-size-m@1x.jpg 324w,
+                  img/penguins-size-l@1x.jpg 560w"
+                sizes="(max-width: 400px) 290px,
+                  (max-width: 767px) 560px,
+                  (max-width: 1023px) 324px,
+                  560px"
+                src="img/penguins-size-l@1x.jpg"
+                width="560"
+                height="301"
+                loading="lazy"
+                alt="Три пингвина">
+            </picture>
+          </div>
+        </section>
+        <section class="main__section features">
+          <div class="features__container container">
+            <h2>Преимущества</h2>
+            <ul>
+              <li>
+                <div class="features__item-decors" aria-hidden="true">
+                  <svg
+                    width="27"
+                    height="32"
+                    viewBox="0 0 27 32"
+                    aria-hidden="true"
+                    focusable="false">
+                    <use href="img/sprite_auto.svg#ship"></use>
+                  </svg>
+                </div>
+                <h3>Небольшой <br class="mobile-br">круизный лайнер</h3>
+                <p>Круизный лайнер, рассчитанный всего лишь на&nbsp;300&nbsp;гостей, поможет избежать шума и&nbsp;очередей и&nbsp;даст возможность насладиться видами и&nbsp;природой.</p>
+              </li>
+              <li>
+                <div class="features__item-decors" aria-hidden="true">
+                  <svg
+                    width="38"
+                    height="32"
+                    viewBox="0 0 38 32"
+                    aria-hidden="true"
+                    focusable="false">
+                    <use href="img/sprite_auto.svg#all-inclusive"></use>
+                  </svg>
+                </div>
+                <h3>Система <br class="mobile-br">все&nbsp;включено</h3>
+                <p>Все наши круизы работают <br class="desktop-br">по&nbsp;системе “Все Включено”. Великолепные блюда и&nbsp;безлимитный бар доступны для&nbsp;вас 24&nbsp;часа.</p>
+              </li>
+              <li>
+                <div class="features__item-decors" aria-hidden="true">
+                  <svg
+                    width="42"
+                    height="32"
+                    viewBox="0 0 42 32"
+                    aria-hidden="true"
+                    focusable="false">
+                    <use href="img/sprite_auto.svg#boat"></use>
+                  </svg>
+                </div>
+                <h3>Экскурсионные <br class="mobile-br">туры на&nbsp;Zodiac</h3>
+                <p>Экскурсионные туры к&nbsp;берегам Антарктиды совершаются на&nbsp;оборудованных лодках <br class="mobile-br">типа <br class="desktop-br">Zodiac в&nbsp;сопровождении <br class="mobile-br">опытных экскурсоводов.</p>
+              </li>
+            </ul>
+          </div>
+          <div class="features__decors" aria-hidden="true">
+            <picture>
+              <source
+                srcset="img/features-bg-size-l@1x.webp 1x, img/features-bg-size-l@2x.webp 2x"
+                type="image/webp">
+              <!--
+                Десктоп:
+                1х: 1366px; 2x: 2732px
+              -->
+              <img
+                srcset="img/features-bg-size-l@2x.jpg 2x"
+                src="img/features-bg-size-l@1x.jpg"
+                width="1366"
+                height="562"
+                loading="lazy"
+                alt="Пейзаж Антарктики">
+            </picture>
           </div>
         </section>
 
         <!-- повторяющиеся элементы
 
-
-
-        menu in footer
-        <div class="menu menu--additional">
-          <ul>
-            <li>
-              <a href="#">Преимущества</a>
-            </li>
-            <li>
-              <a href="#">Направления</a>
-            </li>
-            <li>
-              <a href="#">Ближайшие круизы</a>
-            </li>
-            <li>
-              <a href="#">Контакты</a>
-            </li>
-          </ul>
-        </div>
-
-        <section class="main__section features container">
-
-          section heading h2
-          <h2>Путешествие на&nbsp;край Земли</h2>
-
-          section cards for features
-          <ul>
-            <li>
-              <h3>Небольшой круизный лайнер</h3>
-              <p>Круизный лайнер, рассчитанный всего лишь на&nbsp;300&nbsp;гостей, поможет избежать шума и&nbsp;очередей и&nbsp;даст возможность насладиться видами и&nbsp;природой.</p>
-            </li>
-            <li>
-              <h3>Система все&nbsp;включено</h3>
-              <p>Все наши круизы работают по&nbsp;системе “Все Включено”. Великолепные блюда и&nbsp;безлимитный бар доступны для вас 24&nbsp;часа.</p>
-            </li>
-            <li>
-              <h3>Экскурсионные туры на&nbsp;Zodiac</h3>
-              <p>Экскурсионные туры к&nbsp;берегам Антарктиды совершаются на&nbsp;оборудованных лодках типа Zodiac в&nbsp;сопровождении опытных экскурсоводов.</p>
-            </li>
-          </ul>
-        </section>
         <section class="main__section catalog container">
           section cards for catalog
           <ul>
@@ -339,40 +405,81 @@
         -->
 
       </main>
-      <footer>
-        <div class="container"></div>
+      <footer class="footer">
+        <div class="footer__container container">
+          <div class="footer__menu menu menu--additional">
+            <a class="menu__logo menu__logo--additional logo">
+              <svg
+              width="70"
+              height="38"
+              viewBox="0 0 70 38"
+              role="img"
+              aria-label="На главную круизов в Антарктику">
+                <use href="img/sprite_auto.svg#logo"></use>
+              </svg>
+            </a>
+            <ul class="menu__list menu__list--additional" id="menu__list">
+              <li>
+                <a href="#">Преимущества</a>
+              </li>
+              <li>
+                <a href="#">Направления</a>
+              </li>
+              <li>
+                <a href="#">Ближайшие круизы</a>
+              </li>
+              <li>
+                <a href="#">Контакты</a>
+              </li>
+            </ul>
+          </div>
+          <ul class="social-list">
+            <li>
+              <a href="#" target="_blank">
+                <span class="visually-hidden">Наша группа в Facebook</span>
+                <!-- 23px x 20px -->
+                <svg
+                width="23"
+                height="20"
+                viewBox="0 0 23 20"
+                aria-hidden="true"
+                focusable="false">
+                  <use href="img/sprite_auto.svg#fb"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#" target="_blank">
+                <span class="visually-hidden">Наша группа в Instagram</span>
+                <!-- 23px x 20px -->
+                <svg
+                width="23"
+                height="20"
+                viewBox="0 0 23 20"
+                aria-hidden="true"
+                focusable="false">
+                  <use href="img/sprite_auto.svg#instagram"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#" target="_blank">
+                <span class="visually-hidden">Наша группа в Twitter</span>
+                <!-- 23px x 20px -->
+                <svg
+                width="23"
+                height="20"
+                viewBox="0 0 23 20"
+                aria-hidden="true"
+                focusable="false">
+                  <use href="img/sprite_auto.svg#twitter"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
       </footer>
     </div>
-
-    <!-- Модалки -->
-    <div class="modal modal--preload" data-modal="feedback">
-      <div class="modal__wrapper">
-        <div class="modal__overlay" data-close-modal></div>
-        <div class="modal__content">
-          <p class="modal__description">Обычная модалка</p>
-          <button class="modal__close-btn btn-reset" type="button" aria-label="Закрыть попап" data-close-modal>
-            <svg width="15" height="15">
-              <use xlink:href="img/sprite_auto.svg#icon-close"></use>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal modal--preload modal--fit-content modal--no-scale" data-modal="success">
-      <div class="modal__wrapper">
-        <div class="modal__overlay" data-close-modal></div>
-        <div class="modal__content">
-          <p class="modal__description">Размер этой модалки зависит от ширины контента,<br> отключена анимация-скейл</p>
-          <button class="modal__close-btn btn-reset" type="button" aria-label="Закрыть попап" data-close-modal>
-            <svg width="15" height="15">
-              <use xlink:href="img/sprite_auto.svg#icon-close"></use>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-
     <script src="js/vendor.min.js"></script>
     <script src="js/main.min.js"></script>
   </body>

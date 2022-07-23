@@ -1,9 +1,49 @@
-.features ul {
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3%;
+.features {
+  position: relative;
+  padding-top: 110px;
+  padding-bottom: 120px;
+  background-color: #d8e5f4;
 
   @include vp-1023 {
-    gap: 4%;
+    padding-top: 88px;
+    padding-bottom: 100px;
+  }
+
+  @include vp-767 {
+    padding-top: 54px;
+    padding-bottom: 65px;
+  }
+}
+
+.features__container {
+  position: relative;
+  z-index: 1;
+
+  @include vp-767 {
+    padding: 0 4.6%;
+  }
+}
+
+
+.features h2 {
+  margin-bottom: 49px;
+  text-align: center;
+
+  @include vp-1023 {
+    margin-bottom: 48px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 27px;
+  }
+}
+
+.features ul {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3.5%;
+
+  @include vp-1023 {
+    gap: 4.4%;
   }
 
   @include vp-767 {
@@ -13,18 +53,69 @@
 }
 
 .features li {
-  padding: 30px 2% 50px;
+  display: grid;
+  grid-template-rows: 32px 1fr 2fr;
+  padding: 33px 30px 23px;
   background-color: $alice-blue;
 
   @include vp-1023 {
-    padding: 25px 2% 25px 2.5%;
+    grid-template-rows: 26px 1fr 2fr;
+    padding: 29px 14px 21px 20px;
   }
 
   @include vp-767 {
-    padding: 25px 6% 25px 4.5%;
+    grid-template-rows: 26px auto 1fr;
+    padding: 28px 18px 20px;
+  }
+}
+
+.features .desktop-br {
+  @include vp-1023 {
+    display: none;
+  }
+}
+
+.features .mobile-br {
+  display: none;
+
+  @media (max-width: 360px) {
+    display: block;
   }
 }
 
 .features h3 {
-  margin-bottom: 20px;
+  margin-top: 16px;
+  margin-bottom: 8px;
+
+  @include vp-1023 {
+    margin-top: 16px;
+  }
+
+  @include vp-767 {
+    margin-top: 18px;
+  }
+}
+
+.features__item-decors {
+  align-self: center;
+}
+
+.features__item-decors svg {
+  @include vp-1023 {
+    height: 26px;
+  }
+}
+
+.features__decors {
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.features__decors img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

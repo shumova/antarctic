@@ -1,27 +1,51 @@
 .menu {
   display: grid;
-  padding-top: 25px;
   align-items: center;
   grid-template-columns: auto 1fr;
 
-  @include vp-1023 {
-    padding-top: 20px;
-  }
-
   @include vp-767 {
-    padding-top: 10px;
-    grid-template-columns: auto 1fr;
     grid-template-rows: auto auto;
     align-content: start;
   }
 }
 
+.menu--main {
+  padding-top: 26px;
+
+  @include vp-1023 {
+    padding-top: 21px;
+  }
+
+  @include vp-767 {
+    padding-top: 9px;
+    padding-left: 15px;
+    grid-template-columns: auto 1fr;
+  }
+}
+
+.menu--additional {
+  @include vp-767 {
+    grid-template-columns: 1fr;
+    padding-left: 4px;
+  }
+}
+
 .menu__logo {
+  display: grid;
+  margin-right: 43px;
+  padding-top: 9px;
+  padding-bottom: 9px;
   justify-self: start;
   fill: $alice-blue;
 
+  @include vp-1023 {
+    margin-right: 25px;
+  }
+}
+
+.menu__logo--additional {
   @include vp-767 {
-    margin-left: -10px;
+    margin-bottom: 11px;
   }
 }
 
@@ -52,16 +76,15 @@
   }
 }
 
-.menu ul {
+.menu__list {
   display: flex;
   flex-wrap: wrap;
-  gap: 33px;
+  gap: 10px 33px;
   margin: 0;
-  margin-left: auto;
   padding: 0;
 
   @include vp-1023 {
-    gap: 23px;
+    gap: 24px;
   }
 
   @include vp-767 {
@@ -69,7 +92,9 @@
   }
 }
 
-.menu--main ul {
+.menu__list--main {
+  margin-left: auto;
+
   @include vp-767 {
     width: 100%;
     grid-column: 1 / 3;
@@ -77,11 +102,17 @@
   }
 }
 
-.menu li {
+.menu__list--additional {
+  @include vp-767 {
+    gap: 3px;
+  }
+}
+
+.menu__list li {
   list-style-type: none;
 }
 
-.menu a {
+.menu__list a {
   display: block;
   padding-top: 9px;
   padding-bottom: 9px;
@@ -100,23 +131,28 @@
   }
 }
 
-.menu--main a {
+.menu__list--main a {
   @include vp-1023 {
     font-size: 14px;
     line-height: 17px;
   }
 
   @include vp-767 {
-    padding: 10px 25px 8px;
+    padding: 10px 10px 8px;
     font-size: 18px;
     line-height: 22px;
     color: $color-tangaroa;
   }
 }
 
-.menu--additional a {
+.menu__list--additional a {
   @include vp-1023 {
     font-size: 12px;
     line-height: 15px;
+  }
+
+  @include vp-767 {
+    padding-top: 7px;
+    padding-bottom: 7px;
   }
 }
