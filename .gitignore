@@ -5,8 +5,10 @@ package-lock.json
 *.ai
 *.log
 *.psd
+*.pdf
 *.sublime*
 node_modules/
+build
 npm-debug.*
 source/css/*.css
 source/css/*.map
