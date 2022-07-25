@@ -65,7 +65,7 @@
   display: grid;
   min-height: 386px;
   height: 100%;
-  padding: 29px 2% 15px 12%;
+  padding: 29px 9.8% 15px;
   background-color: $color-tangaroa;
 
   @include vp-1023 {
@@ -81,21 +81,10 @@
   }
 }
 
-.catalog__item:hover {
+.catalog__item:hover,
+.catalog__item:focus-within {
   display: block;
-  padding-right: 9.8%;
-  padding-left: 9.8%;
-  box-shadow: 0px 4px 35px rgba(1, 28, 64, 0.15);
-
-  @include vp-1023 {
-    padding-right: 11.5%;
-    padding-left: 11.5%;
-  }
-
-  @include vp-767 {
-    padding-right: 9.4%;
-    padding-left: 9.4%;
-  }
+  box-shadow: 0 4px 35px rgba(1, 28, 64, 0.15);
 }
 
 .catalog__item-content {
@@ -109,12 +98,11 @@
   }
 }
 
-.catalog__item:hover .catalog__item-content {
-  position: relative;
+.catalog__item:hover .catalog__item-content,
+.catalog__item:focus-within .catalog__item-content {
   z-index: 1;
   width: 100%;
   height: 100%;
-  overflow: auto;
 }
 
 .catalog__item h3 {
@@ -122,16 +110,20 @@
   top: -7px;
   z-index: 1;
   grid-row: 2 / 3;
+  padding-left: 5px;
   align-self: end;
   color: $alice-blue;
 
   @include vp-1023 {
     top: 7px;
+    padding-left: 0;
   }
 }
 
-.catalog__item:hover h3 {
+.catalog__item:hover h3,
+.catalog__item:focus-within h3 {
   top: 0;
+  padding-left: 0;
 }
 
 .catalog__item dl {
@@ -165,6 +157,26 @@
   color: $color-tangaroa;
   text-align: center;
   background-color: $alice-blue;
+  pointer-events: none;
+}
+
+.catalog__item:hover a,
+.catalog__item:focus-within a {
+  animation: delay-pointer-events 0.1s linear forwards;
+}
+
+@keyframes delay-pointer-events {
+  0% {
+    pointer-events: none;
+  }
+
+  50% {
+    pointer-events: none;
+  }
+
+  100% {
+    pointer-events: all;
+  }
 }
 
 .catalog__item-img {
@@ -184,11 +196,12 @@
     width: 100%;
     height: 100%;
     content: "";
-    background: linear-gradient(180deg, rgba(1, 28, 64, 0) 50%, #011C40 100%);
+    background: linear-gradient(180deg, rgba(1, 28, 64, 0) 50%, #011c40 100%);
   }
 }
 
-.catalog__item:hover .catalog__item-img {
+.catalog__item:hover .catalog__item-img,
+.catalog__item:focus-within .catalog__item-img {
   display: none;
 }
 
@@ -197,4 +210,3 @@
   height: 100%;
   object-fit: cover;
 }
-
