@@ -9,6 +9,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const elMainNav = document.querySelector('[data-menu]');
   const elMainNavToggle = document.querySelector('.menu__button');
+  const elBody = document.querySelector('body');
 
   elMainNav.classList.remove('has-no-js');
   elMainNav.classList.add('is-closed');
@@ -17,9 +18,11 @@ window.addEventListener('DOMContentLoaded', () => {
     if (elMainNav.classList.contains('is-closed')) {
       elMainNav.classList.remove('is-closed');
       elMainNav.classList.add('is-opened');
+      elBody.style.overflow = 'hidden';
     } else {
       elMainNav.classList.add('is-closed');
       elMainNav.classList.remove('is-opened');
+      elBody.style.overflow = 'auto';
     }
 
     if (elMainNavToggle.getAttribute('aria-expanded') === 'false') {
@@ -39,6 +42,7 @@ window.addEventListener('DOMContentLoaded', () => {
     if (elMainNav.classList.contains('is-opened') && !elMainNav.contains(event.target)) {
       elMainNav.classList.add('is-closed');
       elMainNav.classList.remove('is-opened');
+      elBody.style.overflow = 'auto';
     }
   });
 

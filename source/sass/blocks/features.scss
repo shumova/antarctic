@@ -11,7 +11,7 @@
 
   @include vp-767 {
     padding-top: 54px;
-    padding-bottom: 65px;
+    padding-bottom: 64px;
   }
 }
 
@@ -59,7 +59,7 @@
   background-color: $alice-blue;
 
   @include vp-1023 {
-    grid-template-rows: 26px 1fr 2fr;
+    grid-template-rows: 26px 0.8fr 2fr;
     padding: 29px 14px 21px 20px;
   }
 
@@ -109,6 +109,7 @@
 .features__decors {
   position: absolute;
   top: 0;
+  left: 0;
   z-index: 0;
   width: 100%;
   height: 100%;

@@ -1,0 +1,132 @@
+.booking-form {
+  margin-right: 10.4%;
+  margin-left: 20.2%;
+  padding: 44px 49.5px 50px;
+  color: $alice-blue;
+  background-color: $color-tangaroa;
+  box-shadow: 0 4px 45px rgba(1, 28, 64, 0.15);
+
+  @include vp-1023 {
+    max-width: 59.5%;
+    margin-right: 0;
+    margin-left: 0;
+    justify-self: center;
+  }
+
+  @include vp-767 {
+    max-width: 100%;
+    padding: 35px 30px 40px;
+  }
+}
+
+.booking-form p {
+  margin: 0;
+  margin-bottom: 27px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+
+  @include vp-767 {
+    margin-bottom: 28px;
+    line-height: 25px;
+    text-align: center;
+  }
+}
+
+.booking-form__checkbox {
+  @include vp-767 {
+    margin-top: -4px;
+  }
+}
+
+.booking-form__field label,
+.booking-form__checkbox input {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  border: 0;
+
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+}
+
+.booking-form__field input {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 11px 16px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: $color-tangaroa;
+  background-color: $alice-blue;
+  border: none;
+}
+
+.booking-form__field input::placeholder {
+  font-family: $ff-placeholder;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: rgba(1, 28, 64, 0.7);
+}
+
+.booking-form__checkbox label {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 18px 1fr;
+  gap: 5px;
+  margin-bottom: 30px;
+  font-size: 10px;
+  line-height: 13px;
+
+  &::before {
+    grid-column: 1 / 2;
+    align-self: center;
+    content: "";
+    width: 18px;
+    height: 18px;
+    background-color: $alice-blue;
+  }
+
+  @include vp-767 {
+    max-width: 80%;
+    margin-bottom: 28px;
+    gap: 10px;
+
+    &::before {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.booking-form__checkbox input:focus + label::before {
+  outline: -webkit-focus-ring-color auto 1px;
+  outline-offset: 0;
+}
+
+.booking-form__checkbox input:checked + label::before {
+  background-image: url("../img/sprite/tick.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 10px;
+}
+
+.booking-form [type="submit"] {
+  width: 100%;
+  padding: 11px 25px;
+  font-family: $ff-placeholder;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  color: $color-tangaroa;
+  background-color: $alice-blue;
+  border: none;
+}

@@ -34,7 +34,7 @@
 
 .header--menu.is-opened + .intro {
   @include vp-767 {
-    margin-top: 80px;
+    margin-top: 53px;
     color: transparent;
   }
 }
@@ -45,10 +45,12 @@
     z-index: 5;
     top: 0;
     right: 0;
+    bottom: 0;
     width: 89%;
     height: 100vh;
     row-gap: 22px;
     background-color: $alice-blue;
+    overflow-x: scroll;
   }
 }
 
