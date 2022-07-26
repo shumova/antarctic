@@ -30,6 +30,7 @@
   font-size: 18px;
   line-height: 27px;
   text-align: left;
+  word-break: break-word;
 
   @include vp-1023 {
     line-height: 25px;
@@ -42,4 +43,5 @@
   font-size: 14px;
   line-height: 20px;
   text-align: left;
+  word-break: break-word;
 }
