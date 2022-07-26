@@ -6,6 +6,10 @@
   background-color: $color-tangaroa;
   box-shadow: 0 4px 45px rgba(1, 28, 64, 0.15);
 
+  @media (max-width: 1300px) {
+    margin-left: 5%;
+  }
+
   @include vp-1023 {
     max-width: 59.5%;
     margin-right: 0;
@@ -85,6 +89,7 @@
   margin-bottom: 30px;
   font-size: 10px;
   line-height: 13px;
+  cursor: pointer;
 
   &::before {
     grid-column: 1 / 2;
@@ -93,6 +98,7 @@
     width: 18px;
     height: 18px;
     background-color: $alice-blue;
+    cursor: pointer;
   }
 
   @include vp-767 {
@@ -108,8 +114,19 @@
 }
 
 .booking-form__checkbox input:focus + label::before {
-  outline: -webkit-focus-ring-color auto 1px;
-  outline-offset: 0;
+  outline: auto;
+  outline-width: 1px;
+  outline-offset: 2px;
+}
+
+.booking-form__checkbox input:focus:not(:focus-visible) + label::before {
+  outline: none;
+}
+
+.booking-form__checkbox input:focus-visible + label::before {
+  outline: auto;
+  outline-width: 1px;
+  outline-offset: 2px;
 }
 
 .booking-form__checkbox input:checked + label::before {
@@ -129,4 +146,14 @@
   color: $color-tangaroa;
   background-color: $alice-blue;
   border: none;
+  user-select: none;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
 }

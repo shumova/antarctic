@@ -57,8 +57,16 @@
 
 .catalog li {
   position: relative;
-  width: 100%;
-  max-width: 350px;
+  width: 260px;
+  min-height: 386px;
+
+  @include vp-1023 {
+    width: 309px;
+  }
+
+  @include vp-767 {
+    width: 270px;
+  }
 }
 
 .catalog__item {
@@ -158,6 +166,15 @@
   text-align: center;
   background-color: $alice-blue;
   pointer-events: none;
+  user-select: none;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
 }
 
 .catalog__item:hover a,

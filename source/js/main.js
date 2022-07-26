@@ -5,46 +5,48 @@ import {initModals} from './modules/modals/init-modals';
 
 window.addEventListener('DOMContentLoaded', () => {
 
-  // menu
+  // Menu
 
   const elMainNav = document.querySelector('[data-menu]');
-  const elMainNavToggle = document.querySelector('.menu__button');
+  const elMainNavToggle = document.querySelector('[data-menu-button]');
   const elBody = document.querySelector('body');
 
-  elMainNav.classList.remove('has-no-js');
-  elMainNav.classList.add('is-closed');
+  if (elMainNav && elMainNavToggle) {
+    elMainNav.classList.remove('has-no-js');
+    elMainNav.classList.add('is-closed');
 
-  elMainNavToggle.addEventListener('click', () => {
-    if (elMainNav.classList.contains('is-closed')) {
-      elMainNav.classList.remove('is-closed');
-      elMainNav.classList.add('is-opened');
-      elBody.style.overflow = 'hidden';
-    } else {
-      elMainNav.classList.add('is-closed');
-      elMainNav.classList.remove('is-opened');
-      elBody.style.overflow = 'auto';
-    }
+    elMainNavToggle.addEventListener('click', () => {
+      if (elMainNav.classList.contains('is-closed')) {
+        elMainNav.classList.remove('is-closed');
+        elMainNav.classList.add('is-opened');
+        elBody.style.overflow = 'hidden';
+      } else {
+        elMainNav.classList.add('is-closed');
+        elMainNav.classList.remove('is-opened');
+        elBody.style.overflow = 'auto';
+      }
 
-    if (elMainNavToggle.getAttribute('aria-expanded') === 'false') {
-      elMainNavToggle.setAttribute('aria-expanded', 'true');
-    } else {
-      elMainNavToggle.setAttribute('aria-expanded', 'false');
-    }
+      if (elMainNavToggle.getAttribute('aria-expanded') === 'false') {
+        elMainNavToggle.setAttribute('aria-expanded', 'true');
+      } else {
+        elMainNavToggle.setAttribute('aria-expanded', 'false');
+      }
 
-    if (elMainNavToggle.getAttribute('aria-label') === 'Открыть меню') {
-      elMainNavToggle.setAttribute('aria-label', 'Закрыть меню');
-    } else {
-      elMainNavToggle.setAttribute('aria-label', 'Открыть меню');
-    }
-  });
+      if (elMainNavToggle.getAttribute('aria-label') === 'Открыть меню') {
+        elMainNavToggle.setAttribute('aria-label', 'Закрыть меню');
+      } else {
+        elMainNavToggle.setAttribute('aria-label', 'Открыть меню');
+      }
+    });
 
-  document.addEventListener('click', (event) => {
-    if (elMainNav.classList.contains('is-opened') && !elMainNav.contains(event.target)) {
-      elMainNav.classList.add('is-closed');
-      elMainNav.classList.remove('is-opened');
-      elBody.style.overflow = 'auto';
-    }
-  });
+    document.addEventListener('click', (event) => {
+      if (elMainNav.classList.contains('is-opened') && !elMainNav.contains(event.target)) {
+        elMainNav.classList.add('is-closed');
+        elMainNav.classList.remove('is-opened');
+        elBody.style.overflow = 'auto';
+      }
+    });
+  }
 
   // Utils
   // ---------------------------------
@@ -58,6 +60,37 @@ window.addEventListener('DOMContentLoaded', () => {
   // в load следует добавить скрипты, не участвующие в работе первого экрана
   window.addEventListener('load', () => {
     initModals();
+
+    // Booking form
+
+    const elPhoneInput = document.querySelector('[data-phone]');
+    const elNameInput = document.querySelector('[data-name]');
+
+    if (elPhoneInput && elNameInput) {
+      const validate = (inputAttr) => {
+        const input = document.querySelector(inputAttr);
+        const validityState = input.validity;
+
+        if (validityState.patternMismatch || validityState.valueMissing) {
+          if (inputAttr === '[data-phone]') {
+            input.setCustomValidity('Введите номер телефона в формате 89236889975');
+          } else if (inputAttr === '[data-name]') {
+            input.setCustomValidity('Введите имя русскими или латинскими буквами');
+          }
+        } else {
+          input.setCustomValidity('');
+        }
+
+        input.reportValidity();
+      };
+
+      elPhoneInput.addEventListener('keydown', () => validate('[data-phone]'));
+
+      document.querySelector('[data-submit]').addEventListener('click', () => {
+        validate('[data-name]');
+        validate('[data-phone]');
+      });
+    }
   });
 });
 

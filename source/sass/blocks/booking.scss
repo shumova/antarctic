@@ -48,6 +48,7 @@
   margin-bottom: 6px;
   font-size: 40px;
   line-height: 60px;
+  word-break: break-word;
 
   @include vp-1023 {
     margin-bottom: 5px;

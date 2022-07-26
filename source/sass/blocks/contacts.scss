@@ -21,6 +21,7 @@
   column-gap: 3.5%;
 
   @include vp-767 {
+    padding: 0 4.5%;
     grid-template-columns: 1fr;
   }
 }
@@ -118,6 +119,7 @@
 
 .contacts__map {
   position: relative;
+  display: grid;
   width: 100%;
   max-width: 560px;
   height: 306px;
@@ -132,22 +134,36 @@
 
   @include vp-767 {
     grid-row: 2 / 3;
-    max-width: 290px;
-    height: 316px;
+    max-width: 100%;
+    height: revert;
   }
 }
 
+.contacts__map picture,
 .contacts__map img {
-  position: absolute;
+  position: relative;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
   z-index: 0;
   top: 0;
   left: 0;
   width: 100%;
 }
 
+.contacts__map img {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .contacts__map iframe {
   position: relative;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
   z-index: 1;
   width: 100%;
   height: 100%;
+
+  @include vp-767 {
+    min-height: 316px;
+  }
 }

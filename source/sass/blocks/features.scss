@@ -70,7 +70,7 @@
 }
 
 .features .desktop-br {
-  @include vp-1023 {
+  @media (max-width: 1140px) {
     display: none;
   }
 }
