@@ -6,13 +6,13 @@
 
 // is-closed
 
-.header--menu.is-closed ul {
+.header.is-closed ul {
   @include vp-767 {
     display: none;
   }
 }
 
-.header--menu.is-closed .header__menu-button {
+.header.is-closed .header__menu-button {
   @include vp-767 {
     position: relative;
 
@@ -32,14 +32,14 @@
 
 // is-opened
 
-.header--menu.is-opened + section {
+.header.is-opened + section {
   @include vp-767 {
     margin-top: 53px;
     color: transparent;
   }
 }
 
-.header--menu.is-opened .header__menu {
+.header.is-opened .header__menu {
   @include vp-767 {
     position: fixed;
     z-index: 5;
@@ -54,19 +54,19 @@
   }
 }
 
-.header--menu.is-opened ul {
+.header.is-opened ul {
   @include vp-767 {
     display: flex;
   }
 }
 
-.header--menu.is-opened .header__logo {
+.header.is-opened .header__logo {
   @include vp-767 {
     fill: $color-tangaroa;
   }
 }
 
-.header--menu.is-opened .header__menu-button {
+.header.is-opened .header__menu-button {
   @include vp-767 {
     position: relative;
     z-index: 10;
@@ -95,26 +95,26 @@
 
 // menu--no-js
 
-.header--menu.has-no-js {
+.header.has-no-js {
   @include vp-767 {
     background-color: $alice-blue;
   }
 }
 
-.header--menu.has-no-js .header__menu {
+.header.has-no-js .header__menu {
   @include vp-767 {
     padding-bottom: 40px;
     row-gap: 20px;
   }
 }
 
-.header--menu.has-no-js .header__logo {
+.header.has-no-js .header__logo {
   @include vp-767 {
     fill: $color-tangaroa;
   }
 }
 
-.header--menu.has-no-js .header__menu-button {
+.header.has-no-js .header__menu-button {
   @include vp-767 {
     display: none;
   }
