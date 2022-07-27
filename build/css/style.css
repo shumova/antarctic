@@ -387,6 +387,14 @@ template {
 @font-face {
   font-style: normal;
   font-weight: 400;
+  font-family: "Rouble";
+  font-display: swap;
+  src: url("../fonts/rouble.woff2") format("woff2"), url("../fonts/rouble.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 400;
   font-family: "Montserrat";
   font-display: swap;
   src: url("../fonts/montserrat-400.woff2") format("woff2"), url("../fonts/montserrat-400.woff") format("woff");
@@ -1957,11 +1965,11 @@ button,
     display: none;
   }
 
-  .header--menu.is-closed .menu__button {
+  .header--menu.is-closed .header__menu-button {
     position: relative;
   }
 
-  .header--menu.is-closed .menu__button::after {
+  .header--menu.is-closed .header__menu-button::after {
     position: absolute;
     content: "";
     top: 47%;
@@ -1976,12 +1984,12 @@ button,
     box-shadow: 0 6px 0 0 #f9fbfd, 0 -6px 0 0 #f9fbfd;
   }
 
-  .header--menu.is-opened + .intro {
+  .header--menu.is-opened + section {
     margin-top: 53px;
     color: transparent;
   }
 
-  .header--menu.is-opened .menu {
+  .header--menu.is-opened .header__menu {
     position: fixed;
     z-index: 5;
     top: 0;
@@ -2000,18 +2008,18 @@ button,
     display: flex;
   }
 
-  .header--menu.is-opened .menu__logo {
+  .header--menu.is-opened .header__logo {
     fill: #011c40;
   }
 
-  .header--menu.is-opened .menu__button {
+  .header--menu.is-opened .header__menu-button {
     position: relative;
     z-index: 10;
     margin-right: 0;
   }
 
-  .header--menu.is-opened .menu__button::after,
-  .header--menu.is-opened .menu__button::before {
+  .header--menu.is-opened .header__menu-button::after,
+  .header--menu.is-opened .header__menu-button::before {
     position: absolute;
     content: "";
     top: 48%;
@@ -2021,13 +2029,13 @@ button,
     background-color: #011c40;
   }
 
-  .header--menu.is-opened .menu__button::after {
+  .header--menu.is-opened .header__menu-button::after {
     -webkit-transform: translateX(-50%) rotate(45deg);
     -ms-transform: translateX(-50%) rotate(45deg);
     transform: translateX(-50%) rotate(45deg);
   }
 
-  .header--menu.is-opened .menu__button::before {
+  .header--menu.is-opened .header__menu-button::before {
     -webkit-transform: translateX(-50%) rotate(-45deg);
     -ms-transform: translateX(-50%) rotate(-45deg);
     transform: translateX(-50%) rotate(-45deg);
@@ -2037,16 +2045,16 @@ button,
     background-color: #f9fbfd;
   }
 
-  .header--menu.has-no-js .menu {
+  .header--menu.has-no-js .header__menu {
     padding-bottom: 40px;
     row-gap: 20px;
   }
 
-  .header--menu.has-no-js .menu__logo {
+  .header--menu.has-no-js .header__logo {
     fill: #011c40;
   }
 
-  .header--menu.has-no-js .menu__button {
+  .header--menu.has-no-js .header__menu-button {
     display: none;
   }
 
