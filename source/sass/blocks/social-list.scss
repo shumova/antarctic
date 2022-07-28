@@ -1,5 +1,8 @@
 .social-list {
+  align-self: start;
+  justify-self: end;
   display: flex;
+  max-width: 150px;
   margin: 0;
   padding: 0;
   flex-wrap: wrap;
@@ -9,10 +12,23 @@
   @include vp-1023 {
     gap: 18px;
   }
+
+  @include vp-767 {
+    justify-self: start;
+  }
 }
 
 .social-list li {
+  padding-top: 19px;
   list-style-type: none;
+
+  @include vp-1023 {
+    padding-top: 12px;
+  }
+
+  @include vp-767 {
+    padding-top: 0;
+  }
 }
 
 .social-list a {

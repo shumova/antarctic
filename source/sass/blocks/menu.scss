@@ -1,6 +1,5 @@
 .menu {
   display: grid;
-  align-items: center;
   grid-template-columns: auto 1fr;
 
   @include vp-767 {
@@ -31,6 +30,7 @@
 }
 
 .menu__logo {
+  align-self: start;
   display: grid;
   margin-right: 43px;
   padding-top: 9px;
@@ -77,18 +77,22 @@
 }
 
 .menu__list {
+  align-self: start;
   display: flex;
   flex-wrap: wrap;
   gap: 10px 33px;
   margin: 0;
   padding: 0;
+  padding-top: 9px;
 
   @include vp-1023 {
     gap: 24px;
+    padding-top: 2px;
   }
 
   @include vp-767 {
     flex-direction: column;
+    padding-top: 0;
   }
 }
 
