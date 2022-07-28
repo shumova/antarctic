@@ -54,12 +54,12 @@
 
 .features li {
   display: grid;
-  grid-template-rows: 32px 1fr 2fr;
-  padding: 33px 30px 23px;
+  grid-template-rows: 32px auto 1fr;
+  padding: 33px 30px 25px;
   background-color: $alice-blue;
 
   @include vp-1023 {
-    grid-template-rows: 26px 0.8fr 2fr;
+    grid-template-rows: 26px auto 1fr;
     padding: 29px 14px 21px 20px;
   }
 

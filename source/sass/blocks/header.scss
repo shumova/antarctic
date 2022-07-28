@@ -47,10 +47,19 @@
     right: 0;
     bottom: 0;
     width: 89%;
-    height: 100vh;
     row-gap: 22px;
     background-color: $alice-blue;
     overflow-x: scroll;
+
+    &::after {
+      position: fixed;
+      top: 0;
+      right: 89%;
+      left: 0;
+      bottom: 0;
+      content: "";
+      background: rgba(0, 43, 102, 0.5);
+    }
   }
 }
 

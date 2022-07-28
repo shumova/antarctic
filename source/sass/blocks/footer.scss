@@ -16,7 +16,6 @@
 .footer__container {
   display: grid;
   grid-template-columns: 1fr auto;
-  align-items: center;
 
   @include vp-767 {
     grid-template-columns: 1fr;
