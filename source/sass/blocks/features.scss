@@ -40,10 +40,10 @@
 
 .features ul {
   grid-template-columns: repeat(3, 1fr);
-  gap: 3.5%;
+  gap: 30px 3.5%;
 
   @include vp-1023 {
-    gap: 4.4%;
+    gap: 30px 4.4%;
   }
 
   @include vp-767 {

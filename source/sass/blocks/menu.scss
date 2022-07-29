@@ -98,6 +98,7 @@
 
 .menu__list--main {
   margin-left: auto;
+  justify-content: flex-end;
 
   @include vp-767 {
     width: 100%;

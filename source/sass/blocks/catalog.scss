@@ -55,10 +55,11 @@
   }
 }
 
-.catalog li {
+.catalog__item {
   position: relative;
   width: 260px;
-  min-height: 386px;
+  height: 386px;
+  background-color: $color-tangaroa;
 
   @include vp-1023 {
     width: 309px;
@@ -69,37 +70,43 @@
   }
 }
 
-.catalog__item {
-  display: grid;
-  min-height: 386px;
-  height: 100%;
-  padding: 29px 9.8% 15px;
-  background-color: $color-tangaroa;
-
-  @include vp-1023 {
-    padding-right: 11.5%;
-    padding-left: 11.5%;
-    padding-bottom: 35px;
-  }
-
-  @include vp-767 {
-    padding-right: 9.1%;
-    padding-left: 9.1%;
-    padding-bottom: 25px;
-  }
-}
-
 .catalog__item:hover,
 .catalog__item:focus-within {
-  display: block;
   box-shadow: 0 4px 35px rgba(1, 28, 64, 0.15);
 }
 
+.catalog__item-inner-wrapper {
+  display: grid;
+  position: absolute;
+  top: 29px;
+  right: 25px;
+  left: 25px;
+  bottom: 15px;
+  overflow-y: scroll;
+
+  @include vp-1023 {
+    right: 35px;
+    left: 35px;
+    bottom: 21px;
+  }
+
+  @include vp-767 {
+    right: 25px;
+    left: 25px;
+    bottom: 18px;
+  }
+}
+
+.catalog__item:hover .catalog__item-inner-wrapper,
+.catalog__item:focus-within .catalog__item-inner-wrapper {
+  display: block;
+}
+
 .catalog__item-content {
-  position: relative;
   z-index: -5;
   grid-row: 1 / 2;
   padding-top: 12px;
+  overflow-y: scroll;
 
   @include vp-1023 {
     padding-top: 14px;
@@ -109,8 +116,6 @@
 .catalog__item:hover .catalog__item-content,
 .catalog__item:focus-within .catalog__item-content {
   z-index: 1;
-  width: 100%;
-  height: 100%;
 }
 
 .catalog__item h3 {
@@ -123,8 +128,11 @@
   color: $alice-blue;
 
   @include vp-1023 {
-    top: 7px;
     padding-left: 0;
+  }
+
+  @include vp-767 {
+    top: 0;
   }
 }
 
