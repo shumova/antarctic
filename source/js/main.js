@@ -8,10 +8,11 @@ window.addEventListener('DOMContentLoaded', () => {
   // Menu
 
   const elMainNav = document.querySelector('[data-menu]');
+  const elMainNavList = document.querySelector('[data-menu-list]');
   const elMainNavToggle = document.querySelector('[data-menu-button]');
   const elBody = document.querySelector('body');
 
-  if (elMainNav && elMainNavToggle) {
+  if (elMainNav && elMainNavToggle && elMainNavList) {
     elMainNav.classList.remove('has-no-js');
     elMainNav.classList.add('is-closed');
 
@@ -40,7 +41,15 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
     document.addEventListener('click', (event) => {
-      if (elMainNav.classList.contains('is-opened') && !elMainNav.contains(event.target)) {
+      if (elMainNav.classList.contains('is-opened') && !elMainNavList.contains(event.target)) {
+        elMainNav.classList.add('is-closed');
+        elMainNav.classList.remove('is-opened');
+        elBody.style.overflow = 'auto';
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (elMainNav.clientWidth >= 768) {
         elMainNav.classList.add('is-closed');
         elMainNav.classList.remove('is-opened');
         elBody.style.overflow = 'auto';

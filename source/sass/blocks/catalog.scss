@@ -76,13 +76,28 @@
 }
 
 .catalog__item-inner-wrapper {
-  display: grid;
   position: absolute;
   top: 29px;
-  right: 25px;
+  right: 16px;
   left: 25px;
   bottom: 15px;
   overflow-y: scroll;
+  scrollbar-color: #aaaaaa transparent;
+  scrollbar-width: 9px;
+
+  &::-webkit-scrollbar {
+    width: 9px;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #aaaaaa;
+    border-radius: 9px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: #253861;
+  }
 
   @include vp-1023 {
     right: 35px;
@@ -97,16 +112,10 @@
   }
 }
 
-.catalog__item:hover .catalog__item-inner-wrapper,
-.catalog__item:focus-within .catalog__item-inner-wrapper {
-  display: block;
-}
-
 .catalog__item-content {
+  display: none;
   z-index: -5;
-  grid-row: 1 / 2;
   padding-top: 12px;
-  overflow-y: scroll;
 
   @include vp-1023 {
     padding-top: 14px;
@@ -115,6 +124,7 @@
 
 .catalog__item:hover .catalog__item-content,
 .catalog__item:focus-within .catalog__item-content {
+  display: block;
   z-index: 1;
 }
 
@@ -122,7 +132,9 @@
   position: relative;
   top: -7px;
   z-index: 1;
-  grid-row: 2 / 3;
+  display: grid;
+  align-items: end;
+  height: 100%;
   padding-left: 5px;
   align-self: end;
   color: $alice-blue;
@@ -138,6 +150,8 @@
 
 .catalog__item:hover h3,
 .catalog__item:focus-within h3 {
+  display: block;
+  height: auto;
   top: 0;
   padding-left: 0;
 }

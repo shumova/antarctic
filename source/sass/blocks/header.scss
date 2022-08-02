@@ -32,6 +32,18 @@
 
 // is-opened
 
+.header.is-opened {
+  &::after {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    content: "";
+    background: rgba(0, 43, 102, 0.5);
+  }
+}
+
 .header.is-opened + section {
   @include vp-767 {
     margin-top: 53px;
@@ -49,16 +61,13 @@
     width: 89%;
     row-gap: 22px;
     background-color: $alice-blue;
-    overflow-x: scroll;
+    overflow-y: scroll;
+    scrollbar-color: transparent;
+    scrollbar-width: 0;
 
-    &::after {
-      position: fixed;
-      top: 0;
-      right: 89%;
-      left: 0;
-      bottom: 0;
-      content: "";
-      background: rgba(0, 43, 102, 0.5);
+    &::-webkit-scrollbar {
+      width: 0;
+      background-color: transparent;
     }
   }
 }
